@@ -427,23 +427,32 @@ class Geosuggest extends React.Component {
         onSuggestMouseOut={this.onSuggestMouseOut}
         onSuggestSelect={this.selectSuggest}/>;
 
-    return <div className={classes}>
-      <div className="geosuggest__input-wrapper">
-       
-        {input}
 
-        <Link to={"weather/" + this.state.mylng + "/" + this.state.mylat}>
-        
-          <button type="submit" className="geosuggest__input-wrapper">Search</button>
-        
-        </Link>
-   
-       
-      </div>
-      <div className="geosuggest__suggests-wrapper">
-        {suggestionsList}
-      </div>
-    </div>;
+      if (!this.state.mylng) {
+        return <div className={classes}>
+            <div className="geosuggest__input-wrapper">
+              {input}
+              <button type="submit" className="geosuggest__input-wrapper">Search</button>     
+            </div>
+            <div className="geosuggest__suggests-wrapper">
+              {suggestionsList}
+            </div>
+        </div>;
+      }
+      else {
+        return <div className={classes}>
+          <div className="geosuggest__input-wrapper">
+            {input} 
+            <Link to={"weather/" + this.state.mylng + "/" + this.state.mylat}>
+              <button type="submit" className="geosuggest__input-wrapper">Search</button>
+            </Link>
+          </div>
+          <div className="geosuggest__suggests-wrapper">
+            {suggestionsList}
+          </div>
+        </div>;
+      }
+    
   }
 }
 
