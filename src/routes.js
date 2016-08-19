@@ -6,6 +6,7 @@ import Root from './components/root_index';
 
 
 
+
 export default (
 	<Route path="/" component={App} >
 		<IndexRoute component={Root} />
