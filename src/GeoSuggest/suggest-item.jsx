@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 import shallowCompare from 'react-addons-shallow-compare';
 import classnames from 'classnames';
 
@@ -38,13 +39,20 @@ export default class SuggestItem extends React.Component {
       {'geosuggest-item--active': this.props.isActive}
     );
 
-    return <li className={classes}
+
+    return (
+      
+      <li className={classes}
       style={this.props.style}
       onMouseDown={this.props.onMouseDown}
       onMouseOut={this.props.onMouseOut}
       onClick={this.onClick}>
+      
         {this.props.suggest.label}
-    </li>;
+
+      </li>
+      
+    );
   }
 }
 

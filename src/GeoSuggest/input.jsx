@@ -91,7 +91,9 @@ class Input extends React.Component {
         this.props.className
       );
 
-    return <input className={classes}
+    return ( 
+      
+      <input className={classes}
       ref='input'
       type='text'
       autoComplete='off'
@@ -101,7 +103,9 @@ class Input extends React.Component {
       onKeyDown={this.onInputKeyDown}
       onChange={this.onChange}
       onFocus={this.onFocus}
-      onBlur={this.onBlur} />;
+      onBlur={this.onBlur} />
+
+      );
   }
 }
 

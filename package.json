@@ -29,6 +29,7 @@
     "react-google-maps": "^4.7.1",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.0-rc5",
+    "react-router-form": "^1.0.2",
     "react-sparklines": "^1.4.2",
     "redux": "^3.0.4",
     "redux-promise": "^0.5.0"

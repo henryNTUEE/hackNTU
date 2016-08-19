@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/app';
-import CityDetail from './components/city_detail';
-import Root from './components/root_index';
-
+import RootIndex from './components/root_index';
+import WeatherIndex from './components/weather_index';
+import Geosuggest from './GeoSuggest/Geosuggest';
 
 
 
 export default (
 	<Route path="/" component={App} >
-		<IndexRoute component={CityDetail} />
-		<Route path="weather" component={Root} handler={Root}/>
+		<IndexRoute component={RootIndex} />
+		<Route path="weather/:lat/:lng" component={WeatherIndex} handler={Geosuggest}/>
 	</Route>
 );
 

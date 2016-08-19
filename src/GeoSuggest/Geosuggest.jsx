@@ -1,6 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
 import debounce from 'lodash.debounce';
+import {Link} from 'react-router';
+import Form from 'react-router-form'
+
 
 import defaults from './defaults';
 import propTypes from './prop-types';
@@ -25,6 +28,8 @@ class Geosuggest extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      mylat: '',
+      mylng: '',
       isSuggestsHidden: true,
       isLoading: false,
       userInput: props.initialValue,
@@ -35,6 +40,7 @@ class Geosuggest extends React.Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onAfterInputChange = this.onAfterInputChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
 
     if (props.queryDelay) {
       this.onAfterInputChange =
@@ -366,8 +372,19 @@ class Geosuggest extends React.Component {
         };
 
         this.props.onSuggestSelect(suggest);
+        this.setState({mylng: suggest.location.lng});
+        this.setState({mylat: suggest.location.lat});
+        
+
       }
     );
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault();
+
+    // We need to go and fetch weather data
+    
   }
 
   /**
@@ -381,7 +398,10 @@ class Geosuggest extends React.Component {
         this.props.className,
         {'geosuggest--loading': this.state.isLoading}
       ),
-      input = <Input className={this.props.inputClassName}
+      input = (
+     
+        
+        <Input className={this.props.inputClassName}
         ref='input'
         value={this.state.userInput}
         ignoreTab={this.props.ignoreTab}
@@ -392,7 +412,11 @@ class Geosuggest extends React.Component {
         onNext={this.onNext}
         onPrev={this.onPrev}
         onSelect={this.onSelect}
-        onEscape={this.hideSuggests} {...attributes} />,
+        onEscape={this.hideSuggests} {...attributes} />
+
+        
+   
+        ),
       suggestionsList = <SuggestList isHidden={this.state.isSuggestsHidden}
         style={this.props.style.suggests}
         suggestItemStyle={this.props.style.suggestItem}
@@ -405,7 +429,16 @@ class Geosuggest extends React.Component {
 
     return <div className={classes}>
       <div className="geosuggest__input-wrapper">
+       
         {input}
+
+        <Link to={"weather/" + this.state.mylng + "/" + this.state.mylat}>
+        
+          <button type="submit" className="geosuggest__input-wrapper">Search</button>
+        
+        </Link>
+   
+       
       </div>
       <div className="geosuggest__suggests-wrapper">
         {suggestionsList}
