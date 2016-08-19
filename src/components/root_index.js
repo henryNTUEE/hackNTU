@@ -14,9 +14,6 @@ class Root extends Component {
   render() {
     return (
       <div>
-      	<Link to="/hi1" className="btn btn-primary">
-      		Hi
-      	</Link>
         <SearchBar />
         <WeatherList />
       </div>

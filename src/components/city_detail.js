@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 class CityDetail extends Component {
 	render(){
 		return (
-			<div>City Detail</div>
+			<div>City Detail {this.props.params.id}</div>
 		);
 	}
 }
 
-exports default CityDetail;
+export default CityDetail;

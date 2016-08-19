@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Chart from '../components/chart';
 import GoogleMap from '../components/google_map';
+import {Link} from 'react-router';
 
 class WeatherList extends Component {
   renderWeather(cityData) {
@@ -14,19 +15,26 @@ class WeatherList extends Component {
 
 
     return (
+      
       <tr key={name}>
         <td><GoogleMap lon={lon} lat={lat} /></td>
+        
         <td><Chart data={temps} color="orange" units="C" /></td>
         <td><Chart data={humidities} color="black" units="%" /></td>
-        <td>{name}</td>
+        <td>
+        <Link to={"city/"+cityData.city.id}>
+          <span>{name}</span>
+        </Link>  
+        </td>
       </tr>
+      
     );
   }
 
   render() {
     return (
       <table className="table table-hover">
-        <thead>
+        <thead>   
           <tr>
             <th>Map</th>
             <th>Temperature</th>
@@ -43,8 +51,8 @@ class WeatherList extends Component {
 }
 
 //weather: weather
-function mapStateToProps({ weather }) {
-  return { weather };
+function mapStateToProps({weather}) {
+  return {weather}
 }
 
 export default connect(mapStateToProps)(WeatherList);
