@@ -23,11 +23,7 @@ class WeatherList extends Component {
         
         <td><Chart data={temps} color="orange" units="C" /></td>
         <td><Chart data={humidities} color="black" units="%" /></td>
-        <td>
-        <Link to={"city/"+cityData.city.name + "/" + cityData.city.coord.lon + "/" + cityData.city.coord.lat}  >
-          <span>{name}</span>
-        </Link>  
-        </td>
+        <td>{name}</td>
       </tr>
     );
     });

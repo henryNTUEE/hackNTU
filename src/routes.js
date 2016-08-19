@@ -9,8 +9,8 @@ import Root from './components/root_index';
 
 export default (
 	<Route path="/" component={App} >
-		<IndexRoute component={Root} />
-		<Route path="city/:name/:lon1/:lat1" component={CityDetail} handler={CityDetail}/>
+		<IndexRoute component={CityDetail} />
+		<Route path="weather" component={Root} handler={Root}/>
 	</Route>
 );
 
