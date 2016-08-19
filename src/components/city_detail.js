@@ -8,4 +8,4 @@ class CityDetail extends Component {
 	}
 }
 
-export default CityDetail;
+export default CityDetail;   
