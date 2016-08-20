@@ -9,6 +9,8 @@ import YelpContainer from './containers/yelp_container';
 import Restaurants from './components/restaurant';
 import YelpList from './containers/yelp_list';
 import WeatherBackground from './components/weather_background';
+import Beverages from './components/beverage_component';
+import Desserts from './components/dessert_component';
 
 
 export default (
@@ -16,8 +18,10 @@ export default (
 		<IndexRoute component={RootIndex} />
 		<Route path="weather" component={WeatherBackground} handler={Geosuggest}/>
 		<Route path="yelp/:lat/:lng" component={YelpContainer} handler={YelpContainer} />
-		<Route path="food" component={Restaurants} handler={Restaurants} />
-		<Route path="foodList" component={YelpList} handler={YelpList} />
+		<Route path="Restaurant/:lat/:lng" component={Restaurants} handler={Restaurants} />
+		<Route path="YelpList" component={YelpList} handler={YelpList} />
+		<Route path="Beverage/:lat/:lng" component={Beverages} handler={Beverages} />
+		<Route path="Dessert/:lat/:lng" component={Desserts} handler={Desserts} />
 	</Route>
 );
 

@@ -17,7 +17,7 @@ export function fetchWeather(city) {
 
 export const FETCH_PLACE = 'FETCH_PLACE'
 export function fetchPlace(placeid,cb) {
-  const API_KEY = 'AIzaSyA2y0A2uCVMLVP4W3Qg2c5AvhfqyIHQRdo'
+  const API_KEY = 'AIzaSyCF2Nrtv7MxZj4h5StAOs8LgoPkGnxYXXo'
   const ROOT_URL_PL = `https://maps.googleapis.com/maps/api/place/details/json?`
   const placeUrl = `${ROOT_URL_PL}placeid=${placeid}&key=${API_KEY}`;
   const request = axios.get(placeUrl).then((res)=>{
@@ -31,7 +31,7 @@ export function fetchPlace(placeid,cb) {
 export const FETCH_PHOTO = 'FETCH_PHOTO'
 export function fetchPhoto(photos,cb){
   console.log("Photo",photos)
-  const API_KEY = 'AIzaSyA2y0A2uCVMLVP4W3Qg2c5AvhfqyIHQRdo'
+  const API_KEY = 'AIzaSyCF2Nrtv7MxZj4h5StAOs8LgoPkGnxYXXo'
   const ROOT_URL_PH = `https://maps.googleapis.com/maps/api/place/photo?`
   const photoUrls = photos.map((photo)=>{return `${ROOT_URL_PH}maxwidth=1600&photoreference=${photo.photo_reference}&key=${API_KEY}`})
   //const request = axios.get(photoUrl).then((res)=>{console.log("ee",res);cb(res.data)})

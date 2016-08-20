@@ -6,7 +6,7 @@ class YelpList extends Component {
   	
   renderData() {
     return this.props.yelp.businesses.map((data) => {
-      console.log(data);
+   
       const name = data.id;
       const phone = data.phone;
       const image_url = data.image_url;

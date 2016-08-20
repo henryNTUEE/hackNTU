@@ -13,26 +13,28 @@ class YelpContainer extends Component {
     
   }
 
-  handleClick(a) {
-  	
-  }
-
 
   render() {
   	
-  	console.log(this.props.params);
+  	//console.log(this.props.params);
     
     return (
     	<div>
-      		<Link to="food" params={this.props.params}>
+      		<Link to={"Restaurant/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
         		<span>
-          			<button type="button" className="btn btn-secondary">Food</button>
+          			<button type="button" className="btn btn-secondary">Restaurant</button>
 				</span>       
    			</Link>
-       
-    	<span>
-          <button type="button" onClick={() => this.handleClick('cafes')} className="btn btn-secondary">Cafe</button>
- 		</span>
+       		<Link to={"Beverage/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+        		<span>
+          			<button type="button" className="btn btn-secondary">Beverage</button>
+				</span>       
+   			</Link>
+   			<Link to={"Dessert/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+        		<span>
+          			<button type="button" className="btn btn-secondary">Dessert</button>
+				</span>       
+   			</Link>
 
   		</div>
     );

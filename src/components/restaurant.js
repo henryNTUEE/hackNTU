@@ -13,9 +13,11 @@ class Restaurants extends Component {
   }
 
 	handleClick(a) {
+    const lat = this.props.params.lat;
+    const lng = this.props.params.lng;
 		var default_parameters = {
     		category_filter: a,
-    		ll: '25.0330623,121.5609975',
+    		ll: lat+ ","+ lng,
     		radius_filter: '10000',
     		sort: '2'
   		};
@@ -23,11 +25,10 @@ class Restaurants extends Component {
   	}
   
   	render() {
-      console.log(this.props.params);
     return (
    
       <div>
-      <Link to="foodList" >
+      <Link to="YelpList" >
       	<span>
           	<button type="button" onClick={() => this.handleClick('japanese')} className="btn btn-secondary">Japan</button>
 		    </span>
