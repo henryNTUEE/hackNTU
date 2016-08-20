@@ -28,7 +28,7 @@ class Restaurants extends Component {
     return (
    
       <div>
-      <Link to="YelpList" >
+      <Link to={"YelpList/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
       	<span>
           	<button type="button" onClick={() => this.handleClick('japanese')} className="btn btn-secondary">Japan</button>
 		    </span>

@@ -20,22 +20,45 @@ class YelpContainer extends Component {
     
     return (
     	<div>
-      		<Link to={"Restaurant/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-        		<span>
-          			<button type="button" className="btn btn-secondary">Restaurant</button>
-				</span>       
-   			</Link>
-       		<Link to={"Beverage/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-        		<span>
-          			<button type="button" className="btn btn-secondary">Beverage</button>
-				</span>       
-   			</Link>
-   			<Link to={"Dessert/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-        		<span>
-          			<button type="button" className="btn btn-secondary">Dessert</button>
-				</span>       
-   			</Link>
-
+    		<Link to="/">Back To Search</Link>
+    		<span> Find Eating
+	      		<Link to={"Restaurant/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+	        		<span>
+	          			<button type="button" className="btn btn-secondary">Restaurant</button>
+					</span>       
+	   			</Link>
+	       		<Link to={"Beverage/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+	        		<span>
+	          			<button type="button" className="btn btn-secondary">Beverage</button>
+					</span>       
+	   			</Link>
+	   			<Link to={"Dessert/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+	        		<span>
+	          			<button type="button" className="btn btn-secondary">Dessert</button>
+					</span>       
+	   			</Link>
+   			</span>
+   			<span> Find Living
+   				<Link to={"Living/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+	        		<span>
+	          			<button type="button" className="btn btn-secondary">Living</button>
+					</span>       
+	   			</Link>
+   			</span>
+   			<span> Find Transport
+   				<Link to={"Transport/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+	        		<span>
+	          			<button type="button" className="btn btn-secondary">Transport</button>
+					</span>       
+	   			</Link>
+   			</span>
+   			<span> Find Resorts
+   				<Link to={"Resort/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+	        		<span>
+	          			<button type="button" className="btn btn-secondary">Resort</button>
+					</span>       
+	   			</Link>
+   			</span>
   		</div>
     );
   }

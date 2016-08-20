@@ -11,6 +11,9 @@ import YelpList from './containers/yelp_list';
 import WeatherBackground from './components/weather_background';
 import Beverages from './components/beverage_component';
 import Desserts from './components/dessert_component';
+import Livings from './components/living_component';
+import Transports from './components/transport_component';
+import Resorts from './components/resort_component';
 
 
 export default (
@@ -19,9 +22,13 @@ export default (
 		<Route path="weather" component={WeatherBackground} handler={Geosuggest}/>
 		<Route path="yelp/:lat/:lng" component={YelpContainer} handler={YelpContainer} />
 		<Route path="Restaurant/:lat/:lng" component={Restaurants} handler={Restaurants} />
-		<Route path="YelpList" component={YelpList} handler={YelpList} />
+		<Route path="YelpList/:lat/:lng" component={YelpList} handler={YelpList} />
 		<Route path="Beverage/:lat/:lng" component={Beverages} handler={Beverages} />
 		<Route path="Dessert/:lat/:lng" component={Desserts} handler={Desserts} />
+		<Route path="Living/:lat/:lng" component={Livings} handler={Livings} />
+		<Route path="Transport/:lat/:lng" component={Transports} handler={Transports} />
+		<Route path="Resort/:lat/:lng" component={Resorts} handler={Resorts} />
+
 	</Route>
 );
 

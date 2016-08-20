@@ -16,20 +16,18 @@ class YelpList extends Component {
 
 
       return (
-  
-     
-        <form>
-        	<div>
-        		<a href={link}>{name}</a>
-        		{phone}
-        		<img src={image_url} />
-        		<img src={rating_icon} />
-        		{comment}
-
-        	</div>
-
-        	
-        </form>
+  		<div>
+     		
+        	<form>
+        		<div>
+        			<a href={link}>{name}</a>
+        			{phone}
+        			<img src={image_url} />
+        			<img src={rating_icon} />
+        			{comment}
+        		</div>
+        	</form>
+        </div>
       
     );
     });
@@ -39,9 +37,14 @@ class YelpList extends Component {
   render() {
   	if ( typeof this.props.yelp.businesses !== "undefined"){
   		return (
+  		<div>
+  			<Link to={"yelp/" + this.props.params.lat + "/" + this.props.params.lng }  params={{lat: this.props.params.lat},{lng: this.props.params.lng}} >
+            	<button>Back</button>
+        	</Link>
   			<div>
-  			{this.renderData()}
+  				{this.renderData()}
   			</div>
+  		</div>
   		);
 
   	}

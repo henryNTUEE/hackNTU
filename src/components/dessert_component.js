@@ -29,7 +29,7 @@ class Desserts extends Component {
     return (
    
       <div>
-      <Link to="YelpList" >
+      <Link to={"YelpList/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
         <span>
             <button type="button" onClick={() => this.handleClick('desserts')} className="btn btn-secondary">Desserts</button>
         </span>
