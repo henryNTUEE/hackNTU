@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import debounce from 'lodash.debounce';
 import {Link} from 'react-router';
 import Form from 'react-router-form'
-
+import {connect} from 'react-redux';
 
 import defaults from './defaults';
 import propTypes from './prop-types';
@@ -11,6 +11,10 @@ import filterInputAttributes from './filter-input-attributes';
 
 import Input from './input';
 import SuggestList from './suggest-list';
+
+import {fetchPhoto,fetchPlace} from '../actions/index'
+
+import axios from 'axios'
 
 // Escapes special characters in user input for regex
 function escapeRegExp(str) {
@@ -35,7 +39,8 @@ class Geosuggest extends React.Component {
       userInput: props.initialValue,
       activeSuggest: null,
       suggests: [],
-      timer: null
+      timer: null,
+      photo: ""
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -372,6 +377,7 @@ class Geosuggest extends React.Component {
         };
         
         this.props.onSuggestSelect(suggest);
+        fetchPlace(suggest.placeId,(photo)=>{this.setState({photo})})
         this.setState({mylng: suggest.location.lng});
         this.setState({mylat: suggest.location.lat});
         
@@ -450,6 +456,9 @@ class Geosuggest extends React.Component {
           <div className="geosuggest__suggests-wrapper">
             {suggestionsList}
           </div>
+          <div>
+             {this.state.photo.map((p)=>{return <img src={p}/>})}
+          </div>
         </div>;
       }
     
@@ -468,4 +477,12 @@ Geosuggest.propTypes = propTypes;
  */
 Geosuggest.defaultProps = defaults;
 
-export default Geosuggest;
+
+function MapStateToProps(state) {
+  return ({
+    photo: state.photo,
+    place: state.place
+  });
+}
+export default connect(MapStateToProps)(Geosuggest);
+
