@@ -40,7 +40,7 @@ class Geosuggest extends React.Component {
       activeSuggest: null,
       suggests: [],
       timer: null,
-      photo: ""
+      photo: []
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -438,7 +438,7 @@ class Geosuggest extends React.Component {
         return <div className={classes}>
             <div className="geosuggest__input-wrapper text-center" >
               {input}
-              <button type="submit" className="geosuggest__button btn btn-default center-block" text-align="center" vertical-align="middle" padding="0px">Search</button>     
+              <button type="submit" className="geosuggest__button">Search</button>     
             </div>
             <div className="geosuggest__suggests-wrapper">
               {suggestionsList}
@@ -450,7 +450,7 @@ class Geosuggest extends React.Component {
           <div className="geosuggest__input-wrapper text-center">
             {input} 
             <Link to={"yelp/" + this.state.mylat + "/" + this.state.mylng }  params={{lat: this.state.mylat},{lng: this.state.mylng}} >
-              <button type="submit" className="geosuggest__button btn btn-default center-block"  text-align="center" vertical-align="middle" padding="0px">Search</button>
+              <button type="submit" className="geosuggest__button">Search</button>
             </Link>
           </div>
           <div className="geosuggest__suggests-wrapper">

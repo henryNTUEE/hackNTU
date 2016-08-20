@@ -55,9 +55,7 @@ td:first-of-type {
 }
 
 .wrapper{
-  position: absolute;
-  top:0;
-  bottom: 0;
+  height: 800px !important;
   width: 100%;
   z-index: 3;
   overflow-y:auto;
@@ -72,14 +70,15 @@ td:first-of-type {
 .mark1{
   position:absolute;
   z-index:15;
-  top:10%;
+  top:6%;
   width:100%;
   margin:0 auto;
   text-align: center;
-  font-size:70px; 
-  
+  font-size:100px;
+  font-weight: 900; 
+  font-family: "Zapf Chancery",cursive;
   letter-spacing:3px;
-  font-family: "Ms Sans Serif";
+  //font-family: "Ms Sans Serif";
   color: #CD0000;
 }
 
@@ -90,10 +89,10 @@ td:first-of-type {
   width:100%;
   margin:0 auto;
   font-weight: 100px;
-  text-align: center;
+  text-align: center;  
   font-size:60px; 
+  font-family: "Zapf Chancery",cursive;
   letter-spacing:3px;
-  font-family: "Ms Sans Serif";
   color: #483D8B;
 }
 
@@ -140,7 +139,7 @@ td:first-of-type {
  */
 
 .top-buffer {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .geosuggest {
@@ -152,7 +151,7 @@ td:first-of-type {
   text-align: left;
 }
 .geosuggest__input {
-	margin-top: 35%;
+  margin-top: 35%;
   width: 100%;
   border: 2px solid transparent;
   box-shadow: 0 0 1px #3d464d;
@@ -205,23 +204,36 @@ td:first-of-type {
   background: #267dc0;
   color: #fff;
 }
-.geosuggest__button{
-	vertical-align:middle;
-	text-align:center;
-	
-   position: relative;
-   height: 45.5px;
-   bottom: 45px;
-   width: 70px;
-   right: -100%;
 
+.geosuggest__button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    position: relative;
+    height: 45.5px;
+    width: 70px;
+    bottom: 45px;
+    right: -100%;
 }
-.geosuggest__button:hover {
 
-    background-color: #4CAF50; /* Green */
+.geosuggest__button:hover {
+    background-color: #4CAF50;
     color: white;
 }
+/*.geosuggest__button {
+   //background : url("reborn2.png");
+   //background-repeat: no-repeat;
+   position: relative;
+   height: 45.5px;
+   width: 70px;
+   bottom: 45px;
+   right: -100%;
+}
 
+.geosuggest__button:hover{
+  background-color : rgb(0,255,255); 
+}
+*/
 .geosuggest-item--active:hover,
 .geosuggest-item--active:focus {
   background: #ccc;

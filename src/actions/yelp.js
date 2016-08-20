@@ -67,7 +67,7 @@ var n = require('nonce')();
   //   return callback(error, response, body);
   // });	
  
-
+  console.log(apiURL);
   const request = axios.get(apiURL);
 
   //console.log(request);
