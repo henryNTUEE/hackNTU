@@ -378,9 +378,9 @@ class Geosuggest extends React.Component {
         
         this.props.onSuggestSelect(suggest);
         fetchPlace(suggest.placeId,(photo)=>{this.setState({photo})})
-        
+        this.props.hello_pos(suggest.location.lat, suggest.location.lng);
         this.setState({mylng: suggest.location.lng,mylat: suggest.location.lat});
-        
+    
 
       }
     );
@@ -433,8 +433,8 @@ class Geosuggest extends React.Component {
         onSuggestMouseOut={this.onSuggestMouseOut}
         onSuggestSelect={this.selectSuggest}/>;
 
-
-      if (!this.state.mylng) {
+      if (!this.state.mylng && !this.props.hello_lng) {
+        console.log("P",this.props)
         return <div className={classes}>
             <div className="geosuggest__input-wrapper text-center" >
               {input}
@@ -446,10 +446,13 @@ class Geosuggest extends React.Component {
         </div>;
       }
       else {
+        let lng = this.props.hello_lng || this.state.mylng
+        let lat = this.props.hello_lat || this.state.mylat
+        console.log("LAT",lat)
         return <div className={classes}>
           <div className="geosuggest__input-wrapper text-center">
             {input} 
-            <Link to={"yelp/" + this.state.mylat + "/" + this.state.mylng }  params={{lat: this.state.mylat},{lng: this.state.mylng}} >
+            <Link to={"yelp/" + lat + "/" + lng }  params={{lat},{lng}} >
               <button type="submit" className="geosuggest__button">Search</button>
             </Link>
           </div>
@@ -461,6 +464,9 @@ class Geosuggest extends React.Component {
           </div>
         </div>;
       }
+      
+
+
     
   }
 }

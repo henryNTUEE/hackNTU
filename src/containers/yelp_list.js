@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router';
+import { GoogleMapLoader, GoogleMap } from 'react-google-maps';
 
 class YelpList extends Component {
   	
@@ -13,6 +14,11 @@ class YelpList extends Component {
       const rating_icon = data.rating_img_url;
       const comment = data.snippet_text;
       const link = data.url;
+      const coord = data.location.coordinate
+      const API_KEY = 'AIzaSyDrIxhgi2I-4seOTW0rA8zrvRNzi_Bbz3w'
+      const ROOT_URL=`https://maps.googleapis.com/maps/api/staticmap?key=${API_KEY}&zoom=16&size=150x150&maptype=roadmap`
+      const mapUrl=`${ROOT_URL}&center=${coord.latitude},${coord.longitude}&markers=color:blue%7C${coord.latitude},${coord.longitude}`
+      console.log(coord)
 
 
       return (
@@ -24,6 +30,7 @@ class YelpList extends Component {
         			{phone}
         			<img src={image_url} />
         			<img src={rating_icon} />
+              <img src={mapUrl} />
         			{comment}
         		</div>
         	</form>

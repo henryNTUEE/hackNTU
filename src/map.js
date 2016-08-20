@@ -24,7 +24,6 @@ class RootIndex extends Component {
       };
     	this.onInputChange = this.onInputChange.bind(this);
     	this.onMapClick = this.onMapClick.bind(this);
-      this.geoSetPosition = this.geoSetPosition.bind(this);
   	}
 
   	onInputChange(event) {
@@ -35,17 +34,12 @@ class RootIndex extends Component {
       this.setState(
         {lat1: event.latLng.lat(),lng1: event.latLng.lng()}
       );
-    }
-    geoSetPosition(lat,lng) {
-      this.setState(
-        {lat1: lat,lng1: lng}
-      );
+     // this.state.lat1 = event.latLng.lat();
+     // this.state.lng1 = event.latLng.lng();
     }
 	render(){
-	  var pos={lat: this.state.lat1, lng:this.state.lng1};
 		var fixtures = [];
-    let dlat = pos.lat || 25.0152287;
-    let dlng = pos.lng || 121.5315251;
+	  var pos={lat: this.state.lat1, lng:this.state.lng1};
 		return (
 			
 			<div className = "Root_background">
@@ -56,7 +50,6 @@ class RootIndex extends Component {
 					<Geosuggest
 						hello_lat={this.state.lat1}
             hello_lng={this.state.lng1}
-            hello_pos={this.geoSetPosition}
 						placeholder="Enter a place"
 						onChange={this.onInputChange}
 						fixtures={fixtures}
@@ -69,7 +62,7 @@ class RootIndex extends Component {
             googleMapElement={
                <GoogleMap 
                   defaultZoom={12} 
-                  center={{lat: dlat,lng: dlng}}
+                  defaultCenter={{lat: 25.0152287, lng: 121.5315251}}
                   onClick={this.onMapClick}
                 >
                    <Marker />
