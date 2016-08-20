@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-router';
 import {Link} from 'react-router';
 import { fetchWeather } from '../actions/index';
+import {request_yelp} from '../actions/yelp';
 import Geosuggest from '../GeoSuggest/Geosuggest';
 
 
@@ -15,20 +16,13 @@ class RootIndex extends Component {
     	this.state = { term: '' };
 
     	this.onInputChange = this.onInputChange.bind(this);
-    	this.onFormSubmit = this.onFormSubmit.bind(this);
+    	
   	}
 
   	onInputChange(event) {
     	this.setState({ term: event.target.value });
   	}
 	
-	onFormSubmit(event) {
-    	event.preventDefault();
-
-    	// We need to go and fetch weather data
-    	this.props.fetchWeather(this.state.term);
-    	this.setState({ term: '' });
-  	}
 
 	
 	render(){
@@ -41,23 +35,13 @@ class RootIndex extends Component {
 				<Geosuggest
 					
 					placeholder="Enter a place"
-					//onFocus={this.onFocus}
-					//onBlur={this.onBlur}
 					onChange={this.onInputChange}
 					fixtures={fixtures}
 					initialValue={this.state.term}
-					//onSuggestSelect={this.onSuggestSelect}
-					//onSuggestNoResults={this.onSuggestNoResults}
 					location={new google.maps.LatLng(121,25) }
 					radius="20"
 				/>
 				
-	
-        		
-
-        	
-				
-		
 			</div>
 			
 		);

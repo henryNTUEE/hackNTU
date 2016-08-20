@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import WeatherReducer from './reducer_weather';
 import CityReducer from './reducer_city';
+import YelpReducer from './reducer_yelp';
 
 const rootReducer = combineReducers({
   weather: WeatherReducer,
-  city: CityReducer
+  city: CityReducer,
+  yelp:YelpReducer
 
 });
 
