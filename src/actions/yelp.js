@@ -24,7 +24,9 @@ var n = require('nonce')();
 
   /* We can setup default parameters here */
   var default_parameters = {
-    location: 'Hayes',
+    category_filter: 'food',
+    ll: '25.0330623,121.5609975',
+    radius_filter: '100',
     sort: '2'
   };
 
@@ -58,22 +60,18 @@ var n = require('nonce')();
   /* Add the query string to the url */
   var apiURL = url+'?'+paramURL;
 
+  console.log(apiURL);
+
   /* Then we use request to send make the API Request */
   // request(apiURL, function(error, response, body){
   //   return callback(error, response, body);
   // });	
-  console.log("hi");
-
-
-  //xmlhttp.setRequestHeader("Access-Control-Allow-Origin", "application/x-www-form-urlencoded");
-	axios.defaults.headers['Access-Control-Allow-Origin'] = `*`;
-  console.log(apiURL);
-
-  console.log(axios.headers);
+ 
 
   const request = axios.get(apiURL);
-  request.PromiseValue
-  console.log(request);
+
+  //console.log(request);
+
   return {
     type: FETCH_YELP,
     payload: request

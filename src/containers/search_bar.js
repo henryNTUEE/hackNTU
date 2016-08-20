@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index';
+import {request_yelp} from '../actions/yelp';
 
 class SearchBar extends Component {
   constructor(props) {

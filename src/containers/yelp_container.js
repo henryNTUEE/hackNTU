@@ -12,7 +12,6 @@ class YelpContainer extends Component {
     this.props.request_yelp();
     return (
       <div>
-        hi
       </div>
     );
   }

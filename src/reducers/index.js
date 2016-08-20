@@ -6,7 +6,7 @@ import YelpReducer from './reducer_yelp';
 const rootReducer = combineReducers({
   weather: WeatherReducer,
   city: CityReducer,
-  yelp:YelpReducer
+  yelp: YelpReducer
 
 });
 

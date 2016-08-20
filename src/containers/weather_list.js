@@ -44,6 +44,7 @@ class WeatherList extends Component {
 
           {this.renderWeather()}
          
+
         
         </tbody>
       </table>

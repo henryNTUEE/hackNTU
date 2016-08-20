@@ -3,15 +3,12 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router';
 
 class YelpList extends Component {
-  renderWeather() {
-    
-  }
-// {this.props.weather.map(this.renderWeather)}
+  
   render() {
-    console.log(this.props.yelp);
+
     return (
      <div>
-      hello
+      {this.props.yelp.total}  
      </div>
     );
   }
@@ -20,6 +17,7 @@ class YelpList extends Component {
 
 
 function mapStateToProps(state) {
+
   return {yelp: state.yelp}
 }
 
