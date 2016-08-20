@@ -5,7 +5,7 @@ import {Link} from 'react-router';
 class YelpList extends Component {
   
   render() {
-  	if (this.props.yelp==null){
+  	if (!this.props.yelp){
   		
   	}
   	else {

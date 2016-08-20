@@ -378,8 +378,8 @@ class Geosuggest extends React.Component {
         
         this.props.onSuggestSelect(suggest);
         fetchPlace(suggest.placeId,(photo)=>{this.setState({photo})})
-        this.setState({mylng: suggest.location.lng});
-        this.setState({mylat: suggest.location.lat});
+        
+        this.setState({mylng: suggest.location.lng,mylat: suggest.location.lat});
         
 
       }

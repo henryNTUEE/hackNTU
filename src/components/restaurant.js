@@ -23,7 +23,7 @@ class Restaurants extends Component {
   	}
   
   	render() {
-
+      console.log(this.props.params);
     return (
    
       <div>
@@ -34,6 +34,28 @@ class Restaurants extends Component {
 		    <span>
           	<button type="button" onClick={() => this.handleClick('german')} className="btn btn-secondary">German</button>
 		    </span>
+        <span>
+            <button type="button" onClick={() => this.handleClick('chinese')} className="btn btn-secondary">Chinese</button>
+        </span>
+        <span>
+            <button type="button" onClick={() => this.handleClick('italian')} className="btn btn-secondary">Italy</button>
+        </span>
+        <span>
+            <button type="button" onClick={() => this.handleClick('french')} className="btn btn-secondary">France</button>
+        </span>
+        <span>
+            <button type="button" onClick={() => this.handleClick('korean')} className="btn btn-secondary">Korea</button>
+        </span>
+        <span>
+            <button type="button" onClick={() => this.handleClick('newamerican')} className="btn btn-secondary">US</button>
+        </span>
+        <span>
+            <button type="button" onClick={() => this.handleClick('thai')} className="btn btn-secondary">Thailand</button>
+        </span>
+        <span>
+            <button type="button" onClick={() => this.handleClick('restaurants')} className="btn btn-secondary">All</button>
+        </span>
+
       </Link>  
       </div>
     );

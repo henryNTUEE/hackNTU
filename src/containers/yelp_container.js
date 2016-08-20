@@ -20,6 +20,7 @@ class YelpContainer extends Component {
 
   render() {
   	
+  	console.log(this.props.params);
     
     return (
     	<div>
