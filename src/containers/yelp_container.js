@@ -5,14 +5,35 @@ import { bindActionCreators } from 'redux';
 import {request_yelp} from '../actions/yelp';
 
 class YelpContainer extends Component {
-  
+	constructor(props) {
+    super(props);
 
-// {this.props.weather.map(this.renderWeather)}
+    this.state = { term: '' };
+
+    
+  }
+
+  handleClick(a) {
+  	
+  }
+
+
   render() {
-    this.props.request_yelp();
+  	
+    
     return (
-      <div>
-      </div>
+    	<div>
+      		<Link to="food" params={this.props.params}>
+        		<span>
+          			<button type="button" className="btn btn-secondary">Food</button>
+				</span>       
+   			</Link>
+       
+    	<span>
+          <button type="button" onClick={() => this.handleClick('cafes')} className="btn btn-secondary">Cafe</button>
+ 		</span>
+
+  		</div>
     );
   }
 }

@@ -7,8 +7,8 @@ import YelpList from '../containers/yelp_list';
 
 class Yelp extends Component {
 	
-
   render() {
+  	
     return (
       <div>
         <YelpContainer />

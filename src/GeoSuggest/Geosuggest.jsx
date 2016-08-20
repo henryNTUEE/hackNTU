@@ -18,7 +18,7 @@ function escapeRegExp(str) {
 }
 
 /**
- * Entry point for the Geosuggest component
+ * Entry point for the Geosuggest component 
  */
 class Geosuggest extends React.Component {
   /**
@@ -370,7 +370,7 @@ class Geosuggest extends React.Component {
           lat: location.lat(),
           lng: location.lng()
         };
-
+        
         this.props.onSuggestSelect(suggest);
         this.setState({mylng: suggest.location.lng});
         this.setState({mylat: suggest.location.lat});
@@ -430,9 +430,9 @@ class Geosuggest extends React.Component {
 
       if (!this.state.mylng) {
         return <div className={classes}>
-            <div className="geosuggest__input-wrapper">
+            <div className="geosuggest__input-wrapper text-center" >
               {input}
-              <button type="submit" className="geosuggest__input-wrapper">Search</button>     
+              <button type="submit" className="geosuggest__button btn btn-default center-block" text-align="center" vertical-align="middle" padding="0px">Search</button>     
             </div>
             <div className="geosuggest__suggests-wrapper">
               {suggestionsList}
@@ -441,10 +441,10 @@ class Geosuggest extends React.Component {
       }
       else {
         return <div className={classes}>
-          <div className="geosuggest__input-wrapper">
+          <div className="geosuggest__input-wrapper text-center">
             {input} 
-            <Link to={"weather/" + this.state.mylng + "/" + this.state.mylat}>
-              <button type="submit" className="geosuggest__input-wrapper">Search</button>
+            <Link to={"yelp/" + this.state.mylat + "/" + this.state.mylng }  params={{lat: this.state.mylat},{lng: this.state.mylng}} >
+              <button type="submit" className="geosuggest__button btn btn-default center-block"  text-align="center" vertical-align="middle" padding="0px">Search</button>
             </Link>
           </div>
           <div className="geosuggest__suggests-wrapper">

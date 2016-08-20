@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import { connect } from 'react-router';
+import { connect } from 'react-redux';
 import {Link} from 'react-router';
 import { fetchWeather } from '../actions/index';
 import {request_yelp} from '../actions/yelp';
@@ -30,18 +30,21 @@ class RootIndex extends Component {
 		
 		return (
 			
-			<div>
-				
-				<Geosuggest
+			<div className = "Root_background">
+				<div className = "wrapper">
+					<h1><span className = "mark1">TSP</span></h1>
+	      			<h3><span className = "mark_sub">Travel and Search for Papaya</span></h3>
 					
-					placeholder="Enter a place"
-					onChange={this.onInputChange}
-					fixtures={fixtures}
-					initialValue={this.state.term}
-					location={new google.maps.LatLng(121,25) }
-					radius="20"
-				/>
-				
+					<Geosuggest
+						
+						placeholder="Enter a place"
+						onChange={this.onInputChange}
+						fixtures={fixtures}
+						initialValue={this.state.term}
+						location={new google.maps.LatLng(121,25) }
+						radius="20"
+					/>
+                </div>   
 			</div>
 			
 		);

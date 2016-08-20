@@ -5,10 +5,15 @@ import {Link} from 'react-router';
 class YelpList extends Component {
   
   render() {
-
+  	if (this.props.yelp==null){
+  		
+  	}
+  	else {
+  		console.log(this.props.yelp);
+  	}
     return (
      <div>
-      {this.props.yelp.total}  
+      	
      </div>
     );
   }

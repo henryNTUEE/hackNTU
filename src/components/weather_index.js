@@ -7,16 +7,21 @@ import WeatherList from '../containers/weather_list';
 
 class WeatherIndex extends Component {
 	componentWillMount(){
-		console.log('good time'); 
+		
 	}
 
 
   render() {
     return (
-      <div>
-        <SearchBar />
-        <WeatherList />
-      </div>
+       <div className = "weather_wrapper">
+              <div className= "searchBar_wrapper" >
+                 <SearchBar />
+              </div>
+              
+              <div className= "weatherList_wrapper" >
+                 <WeatherList />
+              </div>
+          </div>
     );
   }
 }
