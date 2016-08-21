@@ -28,15 +28,27 @@ class Beverages extends Component {
     return (
       <div>
       <Link to={"YelpList/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-      	<span>
-          	<button type="button" onClick={() => this.handleClick('coffee')} className="btn btn-secondary">Coffee & Tea</button>
-		    </span>
-		    <span>
-          	<button type="button" onClick={() => this.handleClick('(beer_and_wine')} className="btn btn-secondary">Alcohol</button>
-		    </span>
-        <span>
-            <button type="button" onClick={() => this.handleClick('bubbletea')} className="btn btn-secondary">Bubble Tea</button>
-        </span>
+          <button type="button" onClick={() => this.handleClick('coffee')} className="btn_coffee">
+            <div className="view third-effect_beverage">
+               <div className="mask">
+                Coffee & Tea
+               </div>  
+            </div>
+          </button>
+		      <button type="button" onClick={() => this.handleClick('beer_and_wine')} className="btn_beer">
+            <div className="view third-effect_beverage">
+               <div className="mask">
+                Alcohol
+               </div>  
+            </div>
+          </button>
+		      <button type="button" onClick={() => this.handleClick('bubbletea')} className="btn_bubbletea">
+            <div className="view third-effect_beverage">
+               <div className="mask">
+                Bubble Tea
+               </div>  
+            </div>
+          </button>
       </Link>  
       </div>
     );

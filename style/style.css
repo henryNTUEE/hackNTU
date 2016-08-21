@@ -55,7 +55,9 @@ td:first-of-type {
 }
 
 .wrapper{
-  height: 800px !important;
+  position: absolute;
+  top:0;
+  bottom: 0;
   width: 100%;
   z-index: 3;
   overflow-y:auto;
@@ -74,11 +76,10 @@ td:first-of-type {
   width:100%;
   margin:0 auto;
   text-align: center;
-  font-size:100px;
-  font-weight: 900; 
+  font-size:100px;   
+  font-weight:900;
   font-family: "Zapf Chancery",cursive;
   letter-spacing:3px;
-  //font-family: "Ms Sans Serif";
   color: #CD0000;
 }
 
@@ -89,36 +90,11 @@ td:first-of-type {
   width:100%;
   margin:0 auto;
   font-weight: 100px;
-  text-align: center;  
+  text-align: center;
   font-size:60px; 
-  font-family: "Zapf Chancery",cursive;
   letter-spacing:3px;
+  font-family: "Zapf Chancery",cursive;  
   color: #483D8B;
-}
-
-
-
-
-.1mark_sub{
-  position:absolute;
-  z-index:15;
-  top:25%;
-  width:100%;
-  margin:0 auto;
-  font-weight: 100px;
-  text-align: center;  
-  font-size:60px; 
-  font-family: "Zapf Chancery",cursive;
-  letter-spacing:3px;
-  color: #483D8B;
-}
-
-.fkMap{
-  z-index: 20;
-}
-
-.mySearch {
-  z-index: 10;
 }
 
 
@@ -158,13 +134,26 @@ td:first-of-type {
     z-index:4;
 }
 
+.fkMap{
+  z-index: 20;
+}
+
+.mySearch {
+  z-index: 10;
+}
 
 /**
  * The geosuggest module
  */
 
+.fkBack {
+  z-index: 5;
+  position: absolute;
+  top:7px;
+}
+
 .top-buffer {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .geosuggest {
@@ -230,7 +219,6 @@ td:first-of-type {
   background: #267dc0;
   color: #fff;
 }
-
 .geosuggest__button {
     background-color: white;
     color: black;
@@ -244,27 +232,764 @@ td:first-of-type {
 }
 
 .geosuggest__button:hover {
-    background-color: #4CAF50;
+
+    background-color: #4CAF50; /* Green */
     color: white;
 }
-/*.geosuggest__button {
-   //background : url("reborn2.png");
-   //background-repeat: no-repeat;
-   position: relative;
-   height: 45.5px;
-   width: 70px;
-   bottom: 45px;
-   right: -100%;
-}
 
-.geosuggest__button:hover{
-  background-color : rgb(0,255,255); 
-}
-*/
 .geosuggest-item--active:hover,
 .geosuggest-item--active:focus {
   background: #ccc;
 }
-.col_1{
-  width: 200px;
+
+/*Food and Cafe button*/
+
+.Food {
+    //background: url("./img/Cafe.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:50%;
+    }
+
+.btn_food {
+    background-color:Transparent;
+    position: absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    width:100%;
+    font-size:200px;
+    }
+.btn_food:hover {
+    background-color:gray;
+    opacity:0.5;
+    background-size: 100%;
+    }
+ 
+
+.Cafe {
+    //background: url("./img/Cafe.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    width:50%;
+    }
+
+.btn_cafe { 
+    background-color:Transparent;
+    position: absolute;
+    right:0;
+    top:0;
+    bottom:0;
+    width:100%;
+    font-size:200px;
+    }
+.btn_cafe:hover {
+    background-color:gray;
+    opacity:0.5;
+    background-size: 100%;
+    }   
+
+/**
+* Food item
+*/
+
+.Food_background{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  width: 100%;
+
+  background-image:url(http://image5.tuku.cn/pic/sucai/shicaibeijing/198.jpg);
 }
+
+.luF_button1{
+   position:relative;
+   width: 29%;
+   height: 27%;
+   margin: 1.5% 1.5% 1.5% 3%;
+   display: inline-block;
+   padding: 0px;
+   text-align: center;
+   background-image:url(./img/A_food.png);
+   border: 5px solid #555555;
+   opacity:1.0;
+   font-weight:900;
+}
+
+
+.luF_button2{
+   position:relative;
+   width: 29%;
+   height: 27%;
+   margin: 1.5%  1.5%;
+   padding: 0px;
+   background-image:url(./img/C_food.png);
+   border: 5px solid #555555;
+  font-weight:900
+}
+
+.luF_button3{
+   position:relative;
+   width: 29%;
+   height: 27%;
+   padding: 0px;
+   margin: 1.5% 3% 1.5% 1.5%;
+   background-image:url(./img/F_food.png);
+   border: 5px solid #555555;
+   font-weight:900
+}
+
+.luF_button4{
+   position:relative;
+   width: 29%;
+   height: 27%;
+   padding: 0px;
+   margin: 1.5% 1.5% 1.5% 3%;
+   background-image:url(./img/G_food.png);
+   border: 5px solid #555555;
+         color: #FFFFFF;
+         text-shadow:0px 0px 15px #FF37FD;
+    font-weight:900
+}
+
+.luF_button5{
+   position:relative;
+   width: 29%;
+   height: 27%;
+   margin: 1.5%  1.5%;
+   padding: 0px;
+   background-image:url(./img/papaya.png);
+   border: 5px solid #555555;
+
+         color: #FFFFFF;
+         text-shadow:0px 0px 15px #FF37FD;
+    font-weight:900
+ }
+
+.luF_button6{
+   position:relative;
+   width: 29%;
+   height: 27%;
+      padding: 0px;
+   margin: 1.5% 3% 1.5% 1.5%;
+   background-image:url(./img/I_food.png);
+   border: 5px solid #555555;
+        color: #FFFFFF;
+        text-shadow:0px 0px 15px #FF37FD;
+   font-weight:900     
+}
+
+.luF_button7{
+   position:relative;
+   width: 29%;
+   height: 27%;
+      padding: 0px;
+   margin: 1.5% 1.5% 1.5% 3%;
+   background-image:url(./img/J_food.png);
+   color: #104E8B;
+   font-weight:900
+}
+
+.luF_button8{
+   position:relative;
+   width: 29%;
+   height: 27%;
+      padding: 0px;
+   margin: 1.5%  1.5%;
+   background-image:url(./img/K_food.png);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900
+}
+
+.luF_button9{
+   position:relative;
+   width: 29%;
+   height: 27%;
+      padding: 0px;
+   margin: 1.5% 3% 1.5% 1.5%;
+   background-image:url(./img/T_food.png);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900
+}
+
+ .third-effect .mask {
+   opacity: 0;
+   overflow:auto;
+   border: 79px solid rgba(0,0,0,0.8);
+   box-sizing:border-box;
+   font-size:30px;
+   transition: all 0.4s ease-in-out;
+}
+
+.third-effect:hover .mask {
+   opacity: 1;
+ }
+
+ /**
+ * yelp_container item
+ */
+
+.Eating_background{
+  position: absolute;
+  top:0;
+  bottom: 50%;
+  width: 100%;
+  background-color: #2F4F4F;
+  font-size: 10px;
+  text-align: center;
+}
+
+.Eating_pos1{
+  position:relative;
+  width: 29%;
+  height: 65%;
+  margin: 8% 1.5% 5% 3%;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  border: 5px solid #555555;
+  background-image:url(./img/Eat_b1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.Eating_pos2{
+   position:relative;
+   width: 29%;
+   height: 65%;
+   margin: 8% 1.5% 5% 1.5%;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+     border: 5px solid #555555;
+       background-image:url(./img/Eat_b2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Eating_pos3{
+   position:relative;
+   width: 29%;
+   height: 65%;
+   margin: 8% 3% 5% 1.5%;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border-radius: 15px;
+     border: 5px solid #555555;
+  box-shadow: 0 9px #999;
+    background-image:url(./img/Eat_b3.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+.Eating_pos1:hover {background-color: #3e8e41}
+
+.Eating_pos1:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.Eating_pos2:hover {background-color: #3e8e41}
+
+.Eating_pos2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.Eating_pos3:hover {background-color: #3e8e41}
+
+.Eating_pos3:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.Living_background{
+  position: absolute;
+  top:50%;
+  bottom: 0%;
+  width: 34%;
+  background-color: #2F4F4F;
+  font-size: 10px;
+  text-align: center;
+}
+
+.Living_b{
+  position:relative;
+  width: 87%;
+  height: 65%;
+  margin: 20% 1.5% 5% 3%;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #1874CD ;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  border: 5px solid #555555;
+  background-image:url(./img/l_b1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.Living_b:hover {background-color:#104E8B;}
+
+.Living_b:active {
+  background-color: #104E8B;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.Trans_background{
+  position: absolute;
+  top:50%;
+  bottom: 0%;
+  width: 33.5%;
+  left: 33%;
+  background-color: #2F4F4F;
+  font-size: 10px;
+  text-align: center;
+}
+
+.Trans_b{
+  position:relative;
+  width: 87%;
+  height: 65%;
+  margin: 20% 1.5% 5% 1.5%;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #FFFF00;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  border: 5px solid #555555;
+  background-image:url(./img/T_b1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.Trans_b:hover {background-color: #FFD700;}
+
+.Trans_b:active {
+  background-color: #FFD700;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.Resort_background{
+  position: absolute;
+  top:50%;
+  bottom: 0%;
+  width: 34%;
+  left: 66%;
+  background-color: #2F4F4F;
+  font-size: 10px;
+  text-align: center;
+}
+
+.Resort_b{
+  position:relative;
+  width: 87%;
+  height: 65%;
+  margin: 20% 8% 5% 1.5%;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  outline: none;
+  color: #fff;
+  background-color: #CD3700;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  border: 5px solid #555555;
+  background-image:url(./img/s_b1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.Resort_b:hover {background-color: #CD2626;}
+
+.Resort_b:active {
+  background-color: #CD2626;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+/**
+* Deserts item
+**/
+
+.Desert_background{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  width: 100%;
+
+  background-image:url(http://st2.depositphotos.com/1667659/6827/i/950/depositphotos_68272263-Dessert-macaroons-watercolor-painting-on.jpg);
+}
+
+.desert_b1{
+   position:relative;
+   width: 29%;
+   height: 45%;
+   margin: 1.5% 1.5% 1.5% 3%;
+   display: inline-block;
+   padding: 0px;
+   text-align: center;
+   background-image:url(./img/D_b1.png);
+   border: 5px solid #555555;
+}
+
+
+.desert_b2{
+   position:relative;
+   width: 29%;
+   height: 45%;
+   margin: 1.5%  1.5%;
+   padding: 0px;
+   background-image:url(./img/D_b6.png);
+   border: 5px solid #555555;
+}
+
+.desert_b3{
+   position:relative;
+   width: 29%;
+   height: 45%;
+   padding: 0px;
+   margin: 1.5% 3% 1.5% 1.5%;
+   background-image:url(./img/D_d5.png);
+   border: 5px solid #555555;
+   background-position: center;
+}
+
+.desert_b4{
+   position:relative;
+   width: 29%;
+   height: 45%;
+   padding: 0px;
+   margin: 1.5% 1.5% 1.5% 3%;
+   background-image:url(./img/D_b2.png);
+   border: 5px solid #555555;
+         color: #FFFFFF;
+         text-shadow:0px 0px 15px #FF37FD;
+       }
+
+.desert_b5{
+   position:relative;
+   width: 29%;
+   height: 45%;
+   margin: 1.5%  1.5%;
+   padding: 0px;
+   background-image:url(./img/D_b7.png);
+   border: 5px solid #555555;
+
+    color: #FFFFFF;
+    text-shadow:0px 0px 15px #FF37FD;
+ }
+
+.desert_b6{
+   position:relative;
+   width: 29%;
+   height: 45%;
+      padding: 0px;
+   margin: 1.5% 3% 1.5% 1.5%;
+   background-image:url(./img/D_b4.png);
+   border: 5px solid #555555;
+        color: #FFFFFF;
+        text-shadow:0px 0px 15px #FF37FD;    
+}
+
+/*Beverages*/
+.btn_coffee{
+   position:absolute;
+   width: 33.33%;
+   height: 100%;
+   padding: 0px;
+   margin: 0% 33.33% 0% 0%;
+   background-image:url(./img/coffee.png);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+}
+.btn_beer{
+   position:absolute;
+   width: 33.33%;
+   height: 100%;
+   padding: 0px;
+   margin: 0% 33.33% 0% 33.33%;
+   background-image:url(./img/beer.png);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+}
+.btn_bubbletea{
+   position:absolute;
+   right:0;
+   width: 33.33%;
+   height: 100%;
+   padding: 0px;
+   margin: 0% 0% 0% 33.33%;
+   background-image:url(./img/bubbletea.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:90%;
+   background-repeat:no-repeat;
+    background-position:center;
+}
+
+.third-effect_beverage .mask {
+   opacity: 0;
+   overflow:auto;
+   border: 10px solid rgba(0,0,0,0.8);
+   box-sizing:border-box;
+   font-size:60px;
+   transition: all 0.4s ease-in-out;
+}
+
+.third-effect_beverage:hover .mask {
+   opacity: 1;
+ }
+
+ /*living*/
+
+.btn_hotels{
+   position:absolute;
+   width: 33.33%;
+   height: 100%;
+   padding: 0px;
+   margin: 0% 33.33% 0% 0%;
+   background-image:url(./img/hotel.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+   background-color:white;
+}
+.btn_hostels{
+   position:absolute;
+   width: 33.33%;
+   height: 100%;
+   padding: 0px;
+   margin: 0% 33.33% 0% 33.33%;
+   background-image:url(./img/hostel.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+    background-color:white;
+}
+.btn_bb{
+   position:absolute;
+   right:0;
+   width: 33.33%;
+   height: 100%;
+   padding: 0px;
+   margin: 0% 0% 0% 33.33%;
+   background-image:url(./img/bb.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+   background-color:white; 
+}
+
+.third-effect_living .mask {
+   opacity: 0;
+   overflow:auto;
+   border: 10px solid rgba(0,0,0,0.8);
+   box-sizing:border-box;
+   font-size:60px;
+   transition: all 0.4s ease-in-out;
+}
+
+.third-effect_living:hover .mask {
+   opacity: 1;
+ }
+
+ /*resort*/
+.btn_resort{
+   position:absolute;
+   left:0;
+   width: 50%;
+   height: 100%;
+   padding: 0px;
+   background-image:url(./img/resort.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:150%;
+   background-repeat:no-repeat;
+    background-position:center;
+    background-color:white;
+}
+.btn_tour{
+   position:absolute;
+   right:0;
+   width: 50%;
+   height: 100%;
+   padding: 0px;
+   background-image:url(./img/tour.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:150%;
+   background-repeat:no-repeat;
+    background-position:center;
+   background-color:white; 
+}
+
+.third-effect_resort .mask {
+   opacity: 0;
+   overflow:auto;
+   border: 10px solid rgba(0,0,0,0.8);
+   box-sizing:border-box;
+   font-size:80px;
+   color:black;
+   transition: all 0.4s ease-in-out;
+}
+
+.third-effect_resort:hover .mask {
+   opacity: 1;
+ }
+
+/* transport */
+
+.btn_all{
+   position:absolute;
+   top:0;
+   left:0;
+   width: 50%;
+   height: 50%;
+   padding: 0px;
+   background-image:url(./img/alltransportation.png);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+    background-color:white;
+}
+.btn_travel{
+   position:absolute;
+   top:0;
+   right:0;
+   width: 50%;
+   height: 50%;
+   padding: 0px;
+   background-image:url(./img/travel-service.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+   background-color:white; 
+}
+.btn_car{
+   position:absolute;
+   left:0;
+   bottom:0;
+   width: 50%;
+   height: 50%;
+   padding: 0px;
+   background-image:url(./img/car-rental.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+    background-color:white;
+}
+.btn_motor{
+   position:absolute;
+   right:0;
+   bottom:0;
+   width: 50%;
+   height: 50%;
+   padding: 0px;
+   background-image:url(./img/motor-rental.jpg);
+   border: 5px solid #555555;
+   color: #104E8B;
+   font-weight:900;
+   background-size:100%;
+   background-repeat:no-repeat;
+    background-position:center;
+    background-color:white;
+}
+
+.third-effect_transport .mask {
+   opacity: 0;
+   overflow:auto;
+   border: 20px solid rgba(0,0,0,0.8);
+   box-sizing:border-box;
+   font-size:60px;
+   color:blue;
+   text-align:center;
+   transition: all 0.4s ease-in-out;
+}
+
+.third-effect_transport:hover .mask {
+   opacity: 1;
+ }
+
+ .cal_1{
+  width:200px;
+ }

@@ -28,26 +28,63 @@ class Desserts extends Component {
       
     return (
    
-      <div>
+      <div  className = "Desert_background">
       <Link to={"YelpList/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-        <span>
-            <button type="button" onClick={() => this.handleClick('desserts')} className="btn btn-secondary">Desserts</button>
-        </span>
-      	<span>
-          	<button type="button" onClick={() => this.handleClick('bakeries')} className="btn btn-secondary">Bakeries</button>
-		    </span>
-		    <span>
-          	<button type="button" onClick={() => this.handleClick('convenience')} className="btn btn-secondary">Convenience Stores</button>
-		    </span>
-        <span>
-            <button type="button" onClick={() => this.handleClick('chocolate')} className="btn btn-secondary">Chocolatiers Shops</button>
-        </span>
-        <span>
-            <button type="button" onClick={() => this.handleClick('cheese')} className="btn btn-secondary">Cheese Shops</button>
-        </span>
-        <span>
-            <button type="button" onClick={() => this.handleClick('cakeshop')} className="btn btn-secondary">Cake Shop</button>
-        </span>
+
+        <button type="button"  onClick={() => this.handleClick('desserts')} className="desert_b1"> 
+                 <div className="view third-effect">
+                          <div className="mask">
+                               Desserts
+                          </div>  
+                 </div>
+        </button>
+
+        <button type="button"  onClick={() => this.handleClick('chese')} className="desert_b2"> 
+                 <div className="view third-effect">
+           
+                        <div className="mask">
+                             Chese
+                          </div>  
+                 </div>
+        </button>
+
+        <button type="button"  onClick={() => this.handleClick('convenience')} className="desert_b3"> 
+                 <div className="view third-effect">
+                     
+                        <div className="mask">
+                               Convenience
+                          </div>  
+                 </div>
+        </button>
+
+
+        <button type="button"  onClick={() => this.handleClick('chocolate')} className="desert_b4"> 
+                 <div className="view third-effect">
+              
+                        <div className="mask">
+                               Chocolate
+                          </div>  
+                 </div>
+        </button>
+
+
+        <button type="button"  onClick={() => this.handleClick('bakeries')} className="desert_b5"> 
+                 <div className="view third-effect">
+                        <div className="mask">
+                                 Bakeries
+                          </div>  
+                 </div>
+        </button>
+
+
+        <button type="button"  onClick={() => this.handleClick('cakeshop')} className="desert_b6"> 
+                 <div className="view third-effect">
+                  
+                        <div className="mask">
+                                  Cakeshop
+                          </div>  
+                 </div>
+        </button>
         
 
       </Link>  

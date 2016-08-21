@@ -30,15 +30,29 @@ class Livings extends Component {
    
       <div>
       <Link to={"YelpList/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-        <span>
-            <button type="button" onClick={() => this.handleClick('hotels')} className="btn btn-secondary">Hotels</button>
-        </span>
-      	<span>
-          	<button type="button" onClick={() => this.handleClick('hostels')} className="btn btn-secondary">Hostels</button>
-		    </span>
-		    <span>
-          	<button type="button" onClick={() => this.handleClick('bedbreakfast')} className="btn btn-secondary">Bed & Breakfast</button>
-		    </span>
+        
+            <button type="button" onClick={() => this.handleClick('hotels')} className="btn_hotels">
+               <div className="view third-effect_living">
+               <div className="mask">
+                Hotels
+               </div>
+               </div> 
+            </button>
+          	<button type="button" onClick={() => this.handleClick('hostels')} className="btn_hostels">
+               <div className="view third-effect_living">
+               <div className="mask">
+                Hostels
+               </div>
+               </div> 
+            </button>
+          	<button type="button" onClick={() => this.handleClick('bedbreakfast')} className="btn_bb">
+               <div className="view third-effect_living">
+               <div className="mask">
+                B&B
+               </div>
+               </div> 
+            </button>
+		 
         
 
       </Link>  

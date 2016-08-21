@@ -30,12 +30,23 @@ class Resorts extends Component {
    
       <div>
       <Link to={"YelpList/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-        <span>
-            <button type="button" onClick={() => this.handleClick('resorts')} className="btn btn-secondary">Resorts</button>
-        </span>
-      	<span>
-          	<button type="button" onClick={() => this.handleClick('tours')} className="btn btn-secondary">Tours</button>
-		    </span>
+        
+            <button type="button" onClick={() => this.handleClick('resorts')} className="btn_resort">
+               <div className="view third-effect_resort">
+               <div className="mask">
+                Resorts
+               </div>  
+            </div>
+            </button>
+        
+          	<button type="button" onClick={() => this.handleClick('tours')} className="btn_tour">
+               <div className="view third-effect_resort">
+               <div className="mask">
+                Tours
+               </div>  
+            </div>
+            </button>
+		    
 
       </Link>  
       </div>

@@ -19,7 +19,7 @@ class Transports extends Component {
         category_filter: a,
         ll: lat+ ","+ lng,
         radius_filter: '10000',
-        sort: '1'
+        sort: '2'
       };
       this.props.request_yelp(default_parameters);
   	}
@@ -30,18 +30,39 @@ class Transports extends Component {
    
       <div>
       <Link to={"YelpList/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-        <span>
-            <button type="button" onClick={() => this.handleClick('transport')} className="btn btn-secondary">All Transportations</button>
-        </span>
-      	<span>
-          	<button type="button" onClick={() => this.handleClick('travelservices')} className="btn btn-secondary">Travel Services</button>
-		    </span>
-        <span>
-            <button type="button" onClick={() => this.handleClick('carrental')} className="btn btn-secondary">Car Rental</button>
-        </span>
-        <span>
-            <button type="button" onClick={() => this.handleClick('motorcycle_rental')} className="btn btn-secondary">Motorcycle Rental</button>
-        </span>
+        
+            <button type="button" onClick={() => this.handleClick('transport')} className="btn_all">
+               <div className="view third-effect_transport">
+               <div className="mask">
+                All Transportations
+               </div>
+               </div> 
+            </button>
+        
+          	<button type="button" onClick={() => this.handleClick('travelservices')} className="btn_travel">
+               <div className="view third-effect_transport">
+               <div className="mask">
+                Travel Services
+               </div>
+               </div> 
+            </button>
+		    
+            <button type="button" onClick={() => this.handleClick('carrental')} className="btn_car">
+               <div className="view third-effect_transport">
+               <div className="mask">
+                Car Rental
+               </div>
+               </div> 
+            </button>
+        
+            <button type="button" onClick={() => this.handleClick('motorcycle_rental')} className="btn_motor">
+               <div className="view third-effect_transport">
+               <div className="mask">
+                Motorcycle Rental
+               </div>
+               </div> 
+            </button>
+        
         
 
       </Link>  

@@ -17,49 +17,66 @@ class YelpContainer extends Component {
   render() {
   	
   	//console.log(this.props.params);
-    
+ 
+
+     	//	<Link to="/">Back To Search</Link>
+    	//	<span> Find Eating   
     return (
-    	<div>
-    		<Link to="/">Back To Search</Link>
-    		<span> Find Eating
-	      		<Link to={"Restaurant/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-	        		<span>
-	          			<button type="button" className="btn btn-secondary">Restaurant</button>
-					</span>       
-	   			</Link>
-	       		<Link to={"Beverage/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-	        		<span>
-	          			<button type="button" className="btn btn-secondary">Beverage</button>
-					</span>       
-	   			</Link>
-	   			<Link to={"Dessert/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-	        		<span>
-	          			<button type="button" className="btn btn-secondary">Dessert</button>
-					</span>       
-	   			</Link>
-   			</span>
-   			<span> Find Living
-   				<Link to={"Living/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-	        		<span>
-	          			<button type="button" className="btn btn-secondary">Living</button>
-					</span>       
-	   			</Link>
-   			</span>
-   			<span> Find Transport
-   				<Link to={"Transport/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-	        		<span>
-	          			<button type="button" className="btn btn-secondary">Transport</button>
-					</span>       
-	   			</Link>
-   			</span>
-   			<span> Find Resorts
-   				<Link to={"Resort/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
-	        		<span>
-	          			<button type="button" className="btn btn-secondary">Resort</button>
-					</span>       
-	   			</Link>
-   			</span>
-  		</div>
+
+
+    	     <div>
+           <div className="fkBack">
+            <Link to="/">Back To Search</Link>
+            </div>
+             <div className="Eating_background">
+
+             <Link to={"Restaurant/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+          <button type="button" className="Eating_pos1"> 
+                             Restaurant
+                    </button>   
+          </Link>
+            <Link to={"Beverage/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+          <button type="button" className="Eating_pos2"> 
+                             Beverage
+                    </button>        
+          </Link>
+          <Link to={"Dessert/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+          <button type="button" className="Eating_pos3"> 
+                             Dessert
+                    </button>       
+          </Link>
+            </div> 
+
+
+            <div className ="Living_background">
+                <Link to={"Living/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+              <button type="button" className="Living_b"> 
+                             Living
+                    </button>       
+          </Link>
+ 
+            </div> 
+
+            <div className ="Trans_background">
+                <Link to={"Transport/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+              <button type="button" className="Trans_b"> 
+                              Transport
+                    </button>       
+          </Link>
+ 
+            </div> 
+
+            <div className ="Resort_background">
+                <Link to={"Resort/"+this.props.params.lat+"/"+this.props.params.lng} params={this.props.params}>
+              <button type="button" className="Resort_b"> 
+                              Resort
+                    </button>       
+          </Link>
+ 
+            </div> 
+
+    </div>
+
     );
   }
 }
