@@ -22,36 +22,51 @@ class YelpList extends Component {
 
 
       return (
-  		<div>
-     		
-        	<form>
-        		<div>
-        			<a href={link}>{name}</a>
-        			{phone}
-        			<img src={image_url} />
-        			<img src={rating_icon} />
-              <img src={mapUrl} />
-        			{comment}
-        		</div>
-        	</form>
-        </div>
-      
+  		
+
+        <tr key={name}>
+        <td><a href={link}>{name}</a></td>
+        <td><img src={image_url} /> </td>
+        <td>{phone}</td>
+        <td><img src={rating_icon} /></td> 
+        <td><img src={mapUrl} /></td> 
+        <td>{comment}</td> 
+      </tr>
+
     );
-    });
-  }
 
-
+ })}
   render() {
   	if ( typeof this.props.yelp.businesses !== "undefined"){
   		return (
-  		<div>
-  			<Link to={"yelp/" + this.props.params.lat + "/" + this.props.params.lng }  params={{lat: this.props.params.lat},{lng: this.props.params.lng}} >
-            	<button>Back</button>
-        	</Link>
-  			<div>
-  				{this.renderData()}
-  			</div>
-  		</div>
+  	
+  		
+
+
+        <div>
+          <Link to={"yelp/" + this.props.params.lat + "/" + this.props.params.lng }  params={{lat: this.props.params.lat},{lng: this.props.params.lng}} >
+              <button>Back</button>
+          </Link>
+          <table className="table table-hover">
+          <thead>   
+          <tr>
+            <th>Name</th>
+            <th>Picture</th>
+            <th>Phone</th>
+            <th>Rating</th>
+            <th>Map</th>
+            <th>Comment</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          {this.renderData()}
+
+          </tbody>
+          </table>
+        </div>
+
+
   		);
 
   	}

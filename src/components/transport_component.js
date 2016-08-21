@@ -19,7 +19,7 @@ class Transports extends Component {
         category_filter: a,
         ll: lat+ ","+ lng,
         radius_filter: '10000',
-        sort: '2'
+        sort: '1'
       };
       this.props.request_yelp(default_parameters);
   	}

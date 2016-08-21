@@ -97,6 +97,31 @@ td:first-of-type {
 }
 
 
+
+
+.1mark_sub{
+  position:absolute;
+  z-index:15;
+  top:25%;
+  width:100%;
+  margin:0 auto;
+  font-weight: 100px;
+  text-align: center;  
+  font-size:60px; 
+  font-family: "Zapf Chancery",cursive;
+  letter-spacing:3px;
+  color: #483D8B;
+}
+
+.fkMap{
+  z-index: 20;
+}
+
+.mySearch {
+  z-index: 10;
+}
+
+
 /**
 *Weather backgroud module
 **/
@@ -151,7 +176,8 @@ td:first-of-type {
   text-align: left;
 }
 .geosuggest__input {
-  margin-top: 35%;
+  position: absolute;
+  top: 28px;
   width: 100%;
   border: 2px solid transparent;
   box-shadow: 0 0 1px #3d464d;
@@ -214,6 +240,7 @@ td:first-of-type {
     width: 70px;
     bottom: 45px;
     right: -100%;
+    margin-top: 70px;
 }
 
 .geosuggest__button:hover {
@@ -237,4 +264,7 @@ td:first-of-type {
 .geosuggest-item--active:hover,
 .geosuggest-item--active:focus {
   background: #ccc;
+}
+.col_1{
+  width: 200px;
 }

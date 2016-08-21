@@ -50,22 +50,13 @@ class RootIndex extends Component {
 			
 			<div className = "Root_background">
 				<div className = "wrapper">
+          <Link to="weather">
 					<h1><span className = "mark1">TSP</span></h1>
+          </Link>
 	      			<h3><span className = "mark_sub">Travel and Search for Papaya</span></h3>
 					
-					<Geosuggest
-						hello_lat={this.state.lat1}
-            hello_lng={this.state.lng1}
-            hello_pos={this.geoSetPosition}
-						placeholder="Enter a place"
-						onChange={this.onInputChange}
-						fixtures={fixtures}
-						initialValue={this.state.term}
-						location={new google.maps.LatLng(121,25) }
-						radius="20"
-          />
           <GoogleMapLoader
-            containerElement={ <div style={{height: '100%'}} /> }
+            containerElement={ <div className="fkMap" style={{height: '40%', width:'23%'}} /> }
             googleMapElement={
                <GoogleMap 
                   defaultZoom={12} 
@@ -78,6 +69,24 @@ class RootIndex extends Component {
                 </GoogleMap>
             }
           />
+
+               
+          
+					<Geosuggest
+            className = "mySearch"
+						hello_lat={this.state.lat1}
+            hello_lng={this.state.lng1}
+            hello_pos={this.geoSetPosition}
+						placeholder="Enter a place"
+						onChange={this.onInputChange}
+						fixtures={fixtures}
+						initialValue={this.state.term}
+						location={new google.maps.LatLng(121,25) }
+						radius="20"
+          />
+
+          
+          
         </div>
 			</div>
 			
